@@ -7,12 +7,12 @@ class Bifrost < Formula
   on_macos do
     on_intel do
       url "https://github.com/bifrost-proxy/bifrost/releases/download/v#{version}/bifrost-v#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "9bd6001ef3ec6d38ff70b309e2b80e6d9800b56440b904909acc894739864ed0"
+      sha256 "a6778c0b9c80e61d5daef0f0c86dd87777c18f5bba5bf7516f7ead0c0ce3f264"
     end
 
     on_arm do
       url "https://github.com/bifrost-proxy/bifrost/releases/download/v#{version}/bifrost-v#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "84d52ee2acddba7cad1db5c0c307867314222ece9ba88280bde226e054a876a1"
+      sha256 "0bf3da5d8150708853c8fa0609410bccbe616bb88f04b082b481ef36a3690195"
     end
   end
 
