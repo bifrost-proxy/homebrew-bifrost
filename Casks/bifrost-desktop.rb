@@ -1,7 +1,7 @@
 cask "bifrost-desktop" do
   arch arm: "aarch64-apple-darwin", intel: "x86_64-apple-darwin"
-  version "0.0.49-beta"
-  sha256 arm: "8b722e65f2e87891928da8afcde561d0b85781d68056c2879d6cca117e6e31e8", intel: "1fbce018d0ece75f51e30fd0e17ff66400ecd4e5b304faf34c572b161f1747a6"
+  version "0.0.50-beta"
+  sha256 arm: "cd6023fb99222d87a83f1641fd7c52c8317207039e6288747066d71890419b48", intel: "d285bf8af589e0628d58c4a678b1b7a671cbee9f058bbf462a03cdaa10e90a46"
 
   url "https://github.com/bifrost-proxy/bifrost/releases/download/v#{version}/bifrost-desktop-v#{version}-#{arch}.dmg"
   name "Bifrost"
