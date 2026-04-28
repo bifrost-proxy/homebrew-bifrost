@@ -1,4 +1,4 @@
-class Bifrost < Formula
+class BifrostAT0_0_64 < Formula
   desc "High-performance HTTP/HTTPS/SOCKS5 proxy server written in Rust"
   homepage "https://github.com/bifrost-proxy/bifrost"
   version "0.0.64"
