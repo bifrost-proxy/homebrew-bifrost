@@ -1,18 +1,18 @@
 class Bifrost < Formula
   desc "High-performance HTTP/HTTPS/SOCKS5 proxy server written in Rust"
   homepage "https://github.com/bifrost-proxy/bifrost"
-  version "0.0.83"
+  version "0.0.84"
   license "MIT"
 
   on_macos do
     on_intel do
       url "https://github.com/bifrost-proxy/bifrost/releases/download/v#{version}/bifrost-v#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "7dba7f567df0e67d1ae62d27afd497015a80a4940189b1f5629f586c2daf210e"
+      sha256 "05252d1733ac27abebeb954f3c9546d29b7f19acffb2d3dc173d7456d9799e14"
     end
 
     on_arm do
       url "https://github.com/bifrost-proxy/bifrost/releases/download/v#{version}/bifrost-v#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "01a0cf36d9591a1c8b7f754f6ad7a3bcc563df12c8ff8c339e81de435eeabdb1"
+      sha256 "3fda538b3f2ba48d5d5f29664f2cb920dc2cf9e5e0f1dee5b28a22d21526afc5"
     end
   end
 
