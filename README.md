@@ -9,6 +9,16 @@ brew tap bifrost-proxy/bifrost
 brew install bifrost
 ```
 
+### BifrostWrite desktop
+
+```bash
+brew install --cask bifrostwrite
+```
+
+The Cask installs the latest published
+[`bifrost-proxy/BifrostWrite`](https://github.com/bifrost-proxy/BifrostWrite)
+release.
+
 ## Installing a Specific Version
 
 You can install a specific version of bifrost using versioned formulas:
