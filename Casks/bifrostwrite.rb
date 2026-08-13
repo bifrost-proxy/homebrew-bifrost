@@ -19,6 +19,13 @@ cask "bifrostwrite" do
                    args: ["-dr", "com.apple.quarantine", "#{staged_path}/BifrostWrite.app"]
   end
 
+  postflight do
+    lsregister = "/System/Library/Frameworks/CoreServices.framework/Frameworks/" \
+                 "LaunchServices.framework/Support/lsregister"
+    system_command lsregister,
+                   args: ["-f", "#{appdir}/BifrostWrite.app"]
+  end
+
   caveats <<~EOS
     BifrostWrite 的社区构建当前使用 ad-hoc 签名，因为发布流程尚未配置
     Apple Developer ID 证书。Cask 在校验 Release SHA-256 后移除 quarantine
