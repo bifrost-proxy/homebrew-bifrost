@@ -14,9 +14,9 @@ cask "bifrostwrite" do
 
   app "BifrostWrite.app"
 
-  postflight do
+  preflight do
     system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/BifrostWrite.app"]
+                   args: ["-dr", "com.apple.quarantine", "#{staged_path}/BifrostWrite.app"]
   end
 
   caveats <<~EOS
