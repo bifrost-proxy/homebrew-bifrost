@@ -13,4 +13,15 @@ cask "bifrostwrite" do
   depends_on macos: :monterey
 
   app "BifrostWrite.app"
+
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/BifrostWrite.app"]
+  end
+
+  caveats <<~EOS
+    BifrostWrite 的社区构建当前使用 ad-hoc 签名，因为发布流程尚未配置
+    Apple Developer ID 证书。Cask 在校验 Release SHA-256 后移除 quarantine
+    属性，以允许 macOS 启动应用及其内嵌原生 Sidecar。
+  EOS
 end
