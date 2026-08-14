@@ -1,0 +1,40 @@
+name: Update BifrostWrite cask
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: update-bifrostwrite-cask
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Sync cask with latest stable release
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/update-bifrostwrite-cask.py
+
+      - name: Commit updated cask
+        shell: bash
+        run: |
+          if git diff --quiet -- Casks/bifrostwrite.rb; then
+            echo "Cask is already up to date"
+            exit 0
+          fi
+
+          VERSION=$(sed -n 's/^  version "\([^"]*\)"$/\1/p' Casks/bifrostwrite.rb)
+          test -n "$VERSION"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Casks/bifrostwrite.rb
+          git commit -m "Update BifrostWrite to v${VERSION}"
+          git push
