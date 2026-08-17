@@ -1,9 +1,9 @@
 cask "bifrostwrite" do
   arch arm: "aarch64-apple-darwin", intel: "x86_64-apple-darwin"
 
-  version "1.2.8"
-  sha256 arm:   "fd4d49e839f89a3e18fc38139c86ef4902a7f18527ca9f1f46f7ff171256b298",
-         intel: "3697118f653b3cf4702ff6ef173e1128492c26681ea03cb74a77a92db973f95f"
+  version "1.2.9"
+  sha256 arm:   "f66b9b00bb9c0c45773adee0b4736aa7c16f7254a6cae75c1688e2ecbe43b54b",
+         intel: "be9bc0952bafd3d21de2d568b3c6ca26c91ff4ae0df3a655b205ca11e1255181"
 
   url "https://github.com/bifrost-proxy/BifrostWrite/releases/download/v#{version}/BifrostWrite-v#{version}-#{arch}.dmg"
   name "BifrostWrite"
